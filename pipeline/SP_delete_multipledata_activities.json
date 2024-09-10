@@ -1,0 +1,47 @@
+{
+	"name": "SP_delete_multipledata_activities",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[DELETE_TABLE_PARAM]",
+					"storedProcedureParameters": {
+						"tableName": {
+							"value": {
+								"value": "@pipeline().parameters.TableName",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Dynamic_SQL",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"DB_Name": "Neerajnathdb"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"TableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-08-24T14:21:12Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

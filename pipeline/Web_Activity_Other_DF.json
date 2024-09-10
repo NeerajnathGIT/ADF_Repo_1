@@ -1,0 +1,31 @@
+{
+	"name": "Web_Activity_Other_DF",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://management.azure.com/subscriptions/2e14683d-c80d-4cd3-b1e4-adae5fbfefda/resourceGroups/neeraj_resource/providers/Microsoft.DataFactory/factories/DF-ADEBT16/pipelines/REST_API_TEST/createRun?api-version=2018-06-01",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-09-04T18:35:25Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

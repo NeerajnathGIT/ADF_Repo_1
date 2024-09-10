@@ -1,0 +1,109 @@
+{
+	"name": "dynamic_file_copy",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dynamic_file_input",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@pipeline().parameters.input_filename",
+								"type": "Expression"
+							},
+							"foldername": {
+								"value": "@pipeline().parameters.input_foldername",
+								"type": "Expression"
+							},
+							"containername": {
+								"value": "@pipeline().parameters.input_containername",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dynamic_Folder",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": {
+								"value": "@pipeline().parameters.Output_containername",
+								"type": "Expression"
+							},
+							"foldername": {
+								"value": "@pipeline().parameters.Output_foldername",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"input_containername": {
+				"type": "string"
+			},
+			"input_foldername": {
+				"type": "string"
+			},
+			"input_filename": {
+				"type": "string"
+			},
+			"Output_containername": {
+				"type": "string"
+			},
+			"Output_foldername": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-08-24T12:00:49Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

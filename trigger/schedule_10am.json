@@ -1,0 +1,36 @@
+{
+	"name": "schedule_10am",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Trigger_Schedule",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Dynamic_dataset_trigger",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"input_db": "DB_A",
+					"input_table": "TBL_A",
+					"output_db": "DB_B",
+					"output_table": "TBL_B"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2024-09-02T08:29:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

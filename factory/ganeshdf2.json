@@ -1,0 +1,9 @@
+{
+	"name": "ganeshdf2",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bcbd5f9b-d360-449d-98ad-4c23526292c5",
+		"tenantId": "609fd99e-d350-4825-9aa0-8cb9f896ee72"
+	}
+}

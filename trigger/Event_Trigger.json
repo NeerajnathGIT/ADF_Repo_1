@@ -1,0 +1,24 @@
+{
+	"name": "Event_Trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Event_pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/datasets/blobs/input",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/2e14683d-c80d-4cd3-b1e4-adae5fbfefda/resourceGroups/neeraj_resource/providers/Microsoft.Storage/storageAccounts/storageacu2",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
