@@ -1,0 +1,96 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ganeshdf2"
+		},
+		"Dynamic_SQL_password": {
+			"value": ""
+		},
+		"LS_BLOB_connectionString": {
+			"value": ""
+		},
+		"LS_KV_BLOB_connectionString": {
+			"value": "DefaultEndpointsProtocol=https;AccountName=storageacu2;"
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"ONPREM_SQL_password": {
+			"value": ""
+		},
+		"Dynamic_SQL_properties_typeProperties_server": {
+			"value": "neerajnathserver.database.windows.net"
+		},
+		"Dynamic_SQL_properties_typeProperties_database": {
+			"value": "@{linkedService().DB_Name}"
+		},
+		"Dynamic_SQL_properties_typeProperties_userName": {
+			"value": "Neerajnath"
+		},
+		"LS_KV_properties_typeProperties_baseUrl": {
+			"value": "https://kv-adebatch16.vault.azure.net/"
+		},
+		"LS_KV_SQL_properties_typeProperties_server": {
+			"value": "neerajnathserver.database.windows.net"
+		},
+		"LS_KV_SQL_properties_typeProperties_database": {
+			"value": "ganeshdb"
+		},
+		"LS_KV_SQL_properties_typeProperties_userName": {
+			"value": "Neerajnath"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "neerajnathserver.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "ganeshdb"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "Neerajnath"
+		},
+		"ONPREM_SQL_properties_typeProperties_server": {
+			"value": "DESKTOP-1R91NVO\\SQLEXPRESS"
+		},
+		"ONPREM_SQL_properties_typeProperties_database": {
+			"value": "ADE"
+		},
+		"ONPREM_SQL_properties_typeProperties_userName": {
+			"value": "Neerajnath"
+		},
+		"9am_schudle_properties_Dynamic_dataset_trigger_parameters_input_db": {
+			"value": "DB_A"
+		},
+		"9am_schudle_properties_Dynamic_dataset_trigger_parameters_input_table": {
+			"value": "TBL_X"
+		},
+		"9am_schudle_properties_Dynamic_dataset_trigger_parameters_output_db": {
+			"value": "DB_B"
+		},
+		"9am_schudle_properties_Dynamic_dataset_trigger_parameters_output_table": {
+			"value": "TBL_Y"
+		},
+		"Event_Trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/2e14683d-c80d-4cd3-b1e4-adae5fbfefda/resourceGroups/neeraj_resource/providers/Microsoft.Storage/storageAccounts/storageacu2"
+		},
+		"Tumblingtrigger_properties_pipeline_parameters_WindowStartTime": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"Tumblingtrigger_properties_pipeline_parameters_WindowEndTime": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"schedule_10am_properties_Dynamic_dataset_trigger_parameters_input_db": {
+			"value": "DB_A"
+		},
+		"schedule_10am_properties_Dynamic_dataset_trigger_parameters_input_table": {
+			"value": "TBL_A"
+		},
+		"schedule_10am_properties_Dynamic_dataset_trigger_parameters_output_db": {
+			"value": "DB_B"
+		},
+		"schedule_10am_properties_Dynamic_dataset_trigger_parameters_output_table": {
+			"value": "TBL_B"
+		}
+	}
+}
